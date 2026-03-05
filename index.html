@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Job Tracker</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- DaisyUI -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body class="bg-base-200 min-h-screen p-8">
+
+<div class="max-w-6xl mx-auto">
+    <h1 class="text-3xl font-bold">Job Application Tracker</h1>
+<!-- Stats -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+
+<div class="stat bg-base-100 shadow rounded-box">
+<div class="stat-title text-gray-600">Total</div>
+<div class="stat-value text-black" id="total-jobs-count">8</div>
+</div>
+
+<div class="stat bg-base-100 shadow rounded-box">
+<div class="stat-title text-gray-600">Interview</div>
+<div class="stat-value text-success" id="interview-count">0</div>
+</div>
+
+<div class="stat bg-base-100 shadow rounded-box">
+<div class="stat-title text-gray-600">Rejected</div>
+<div class="stat-value text-error" id="rejected-count">0</div>
+</div>
+
+</div>
+<!-- Header -->
+<div class="flex justify-between items-center mb-6 mt-10">
+<h1 class="text-3xl font-bold">Available Jobs</h1>
+<span class="text-gray-500">8 jobs</span>
+</div>
+
+<!-- Tabs -->
+<div role="tablist" class="tabs tabs-boxed mb-6 w-fit">
+<a role="tab" class="tab tab-active" id="tab-all">All</a>
+<a role="tab" class="tab" id="tab-interview">Interview</a>
+<a role="tab" class="tab" id="tab-rejected">Rejected</a>
+</div>
+
+
+<!-- Job List -->
+<div class="space-y-6">
+
+<!-- Job Card -->
+<div class="card bg-base-100 shadow-md border job-card" data-status="not-applied">
+
+<div class="card-body">
+
+<div class="flex justify-between">
+
+<div>
+<h2 class="card-title text-lg">Frontend Web Developer</h2>
+<p class="text-sm text-gray-500">Web Development</p>
+
+<p class="text-sm text-gray-500 mt-1">
+Remote • Full-time • $85,000 – $110,000
+</p>
+</div>
+
+<button class="btn btn-ghost btn-circle delete-button">
+🗑
+</button>
+
+</div>
+
+<div class="mt-2">
+<span class="badge badge-outline">NOT APPLIED</span>
+</div>
+
+<p class="text-sm text-gray-600 mt-2">
+We are looking for a skilled Frontend Web Developer to build modern and responsive user interfaces. The candidate should have strong experience with HTML, CSS, JavaScript, and modern frameworks such as React. You will work with our design and backend teams to create fast, accessible, and user-friendly web applications.</p>
+
+<div class="flex gap-3 mt-4">
+
+<button class="btn btn-success btn-sm interview-button">
+Interview
+</button>
+
+<button class="btn btn-outline btn-error btn-sm rejected-button">
+Rejected
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- Second Job -->
+<div class="card bg-base-100 shadow-md border job-card" data-status="not-applied">
+
+<div class="card-body">
+
+<div class="flex justify-between">
+
+<div>
+<h2 class="card-title text-lg">Full Stack Web Developer</h2>
+<p class="text-sm text-gray-500">Web Development</p>
+
+<p class="text-sm text-gray-500 mt-1">
+Los Angeles, CA • Part-time • $95,000 – $130,000
+</p>
+</div>
+
+<button class="btn btn-ghost btn-circle delete-button">
+🗑
+</button>
+
+</div>
+
+<div class="mt-2">
+<span class="badge badge-outline">NOT APPLIED</span>
+</div>
+
+<p class="text-sm text-gray-600 mt-2">
+The Full Stack Web Developer will be responsible for developing both frontend and backend systems for enterprise-level web applications. Required skills include JavaScript, Node.js, database management, and API integration. The ideal candidate should be comfortable working across the entire development stack.
+</p>
+
+<div class="flex gap-3 mt-4">
+
+<button class="btn btn-success btn-sm interview-button">
+Interview
+</button>
+
+<button class="btn btn-outline btn-error btn-sm rejected-button">
+Rejected
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- Third Job -->
+<div class="card bg-base-100 shadow-md border job-card" data-status="not-applied">
+
+<div class="card-body">
+
+<div class="flex justify-between">
+
+<div>
+<h2 class="card-title text-lg">UI/UX Web Designer</h2>
+<p class="text-sm text-gray-500">Web Design</p>
+
+<p class="text-sm text-gray-500 mt-1">
+Boston, MA • Full-time • $70,000 – $95,000
+</p>
+</div>
+
+<button class="btn btn-ghost btn-circle delete-button">
+🗑
+</button>
+
+</div>
+
+<div class="mt-2">
+<span class="badge badge-outline">NOT APPLIED</span>
+</div>
+
+<p class="text-sm text-gray-600 mt-2">
+We are seeking a creative UI/UX Web Designer to design engaging and intuitive digital experiences. The candidate should have strong skills in Figma, Adobe XD, or similar design tools. You will collaborate with developers to turn designs into responsive and accessible web interfaces.
+</p>
+
+<div class="flex gap-3 mt-4">
+
+<button class="btn btn-success btn-sm interview-button">
+Interview
+</button>
+
+<button class="btn btn-outline btn-error btn-sm rejected-button">
+Rejected
+</button>
+
+</div>
+
+</div>
+</div>
+<!-- Job Card -->
+<div class="card bg-base-100 shadow-md border job-card" data-status="not-applied">
+
+<div class="card-body">
+
+<div class="flex justify-between">
+
+<div>
+<h2 class="card-title text-lg">WordPress Web Developer</h2>
+<p class="text-sm text-gray-500">Web Development</p>
+
+<p class="text-sm text-gray-500 mt-1">
+Remote • Full-time • $65,000 – $90,000
+</p>
+</div>
+
+<button class="btn btn-ghost btn-circle delete-button">
+🗑
+</button>
+
+</div>
+
+<div class="mt-2">
+<span class="badge badge-outline">NOT APPLIED</span>
+</div>
+
+<p class="text-sm text-gray-600 mt-2">
+The WordPress Web Developer will design, develop, and maintain WordPress-based websites for our clients. Experience with custom themes, plugins, and website optimization is required. The role also includes improving website performance and ensuring mobile responsiveness.
+</p>
+
+<div class="flex gap-3 mt-4">
+
+<button class="btn btn-success btn-sm interview-button">
+Interview
+</button>
+
+<button class="btn btn-outline btn-error btn-sm rejected-button">
+Rejected
+</button>
+
+</div>
+
+</div>
+</div>
+<!-- Job Card -->
+<div class="card bg-base-100 shadow-md border job-card" data-status="not-applied">
+
+<div class="card-body">
+
+<div class="flex justify-between">
+
+<div>
+<h2 class="card-title text-lg">Backend Developer (API Specialist)</h2>
+<p class="text-sm text-gray-500">Web Development</p>
+
+<p class="text-sm text-gray-500 mt-1">
+Remote • Full-time • $100,000 – $135,000
+</p>
+</div>
+
+<button class="btn btn-ghost btn-circle delete-button">
+🗑
+</button>
+
+</div>
+
+<div class="mt-2">
+<span class="badge badge-outline">NOT APPLIED</span>
+</div>
+
+<p class="text-sm text-gray-600 mt-2">
+We are hiring a Backend Developer with strong knowledge of RESTful APIs and server-side technologies. You will build scalable backend systems and integrate databases to support modern web applications. Experience with Node.js, Python, or PHP frameworks is preferred.
+</p>
+
+<div class="flex gap-3 mt-4">
+
+<button class="btn btn-success btn-sm interview-button">
+Interview
+</button>
+
+<button class="btn btn-outline btn-error btn-sm rejected-button">
+Rejected
+</button>
+
+</div>
+
+</div>
+</div>
+<!-- Job Card -->
+<div class="card bg-base-100 shadow-md border job-card" data-status="not-applied">
+
+<div class="card-body">
+
+<div class="flex justify-between">
+
+<div>
+<h2 class="card-title text-lg">ICT Support Specialist</h2>
+<p class="text-sm text-gray-500">ICT / IT Support</p>
+
+<p class="text-sm text-gray-500 mt-1">
+Remote • Full-time • $55,000 – $75,000
+</p>
+</div>
+
+<button class="btn btn-ghost btn-circle delete-button">
+🗑
+</button>
+
+</div>
+
+<div class="mt-2">
+<span class="badge badge-outline">NOT APPLIED</span>
+</div>
+
+<p class="text-sm text-gray-600 mt-2">
+The ICT Support Specialist will maintain company IT systems and provide technical support to staff. Responsibilities include troubleshooting network issues, managing hardware, installing software, and ensuring system security. Basic knowledge of networking and system administration is required.
+</p>
+
+<div class="flex gap-3 mt-4">
+
+<button class="btn btn-success btn-sm interview-button">
+Interview
+</button>
+
+<button class="btn btn-outline btn-error btn-sm rejected-button">
+Rejected
+</button>
+
+</div>
+
+</div>
+</div>
+<!-- Job Card -->
+<div class="card bg-base-100 shadow-md border job-card" data-status="not-applied">
+
+<div class="card-body">
+
+<div class="flex justify-between">
+
+<div>
+<h2 class="card-title text-lg">Web Application Developer</h2>
+<p class="text-sm text-gray-500">Web Development</p>
+
+<p class="text-sm text-gray-500 mt-1">
+Remote • Full-time • $90,000 – $120,000
+</p>
+</div>
+
+<button class="btn btn-ghost btn-circle delete-button">
+🗑
+</button>
+
+</div>
+
+<div class="mt-2">
+<span class="badge badge-outline">NOT APPLIED</span>
+</div>
+
+<p class="text-sm text-gray-600 mt-2">
+We are looking for a Web Application Developer to build scalable online platforms and services. The role includes developing dynamic web applications, working with databases, and implementing secure authentication systems. Experience with modern frameworks and cloud deployment is a plus.
+</p>
+
+<div class="flex gap-3 mt-4">
+
+<button class="btn btn-success btn-sm interview-button">
+Interview
+</button>
+
+<button class="btn btn-outline btn-error btn-sm rejected-button">
+Rejected
+</button>
+
+</div>
+
+</div>
+</div>
+<!-- Job Card -->
+<div class="card bg-base-100 shadow-md border mb-6 job-card" data-status="not-applied">
+
+<div class="card-body">
+
+<div class="flex justify-between">
+
+<div>
+<h2 class="card-title text-lg">Frontend UI Developer</h2>
+<p class="text-sm text-gray-500">Web Development</p>
+
+<p class="text-sm text-gray-500 mt-1">
+Remote • Full-time • $80,000 – $105,000
+</p>
+</div>
+
+<button class="btn btn-ghost btn-circle delete-button">
+🗑
+</button>
+
+</div>
+
+<div class="mt-2">
+<span class="badge badge-outline">NOT APPLIED</span>
+</div>
+
+<p class="text-sm text-gray-600 mt-2">
+The Frontend UI Developer will transform design concepts into functional web interfaces. The candidate should have strong experience with HTML, CSS frameworks such as Tailwind, and JavaScript. You will collaborate closely with designers and backend developers to build responsive web applications.
+</p>
+
+<div class="flex gap-3 mt-4">
+
+<button class="btn btn-success btn-sm interview-button">
+Interview
+</button>
+
+<button class="btn btn-outline btn-error btn-sm rejected-button">
+Rejected
+</button>
+
+</div>
+
+</div>
+</div>
+<div id="emptyState" class="text-center mt-10 hidden">
+
+<img 
+src="./jobs.png"
+class="w-40 mx-auto opacity-70"
+/>
+
+<p class="text-gray-500 mt-4">
+<h2 class="font-bold text-2xl">No jobs available</h2>  <br>
+<p class="text-1xl">Check back soon for new opportunities</p>
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+<script src="js/machine.js"></script>
+</body>
+</html>
